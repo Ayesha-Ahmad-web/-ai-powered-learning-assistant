@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import documentService from '../services/documentService';
+import documentService from '../services/documentService.js';
 import toast from 'react-hot-toast';
 
 const UploadModal = ({ onClose, onUploaded }) => {

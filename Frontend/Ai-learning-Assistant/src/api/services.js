@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 const API = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: BASE_URL,
 });
 
 API.interceptors.request.use((config) => {
@@ -11,6 +13,8 @@ API.interceptors.request.use((config) => {
   }
   return config;
 });
+
+export default API;
 
 // Named exports (for pages that use them directly)
 export const register    = (data)       => API.post('/api/auth/register', data);
